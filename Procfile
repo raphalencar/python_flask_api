@@ -1,1 +1,1 @@
-web: python3 run_keras_server.py runserver 0.0.0.0:5000
+web: gunicorn run_keras_server.wsgi --log-file -
