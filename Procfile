@@ -1,1 +1,1 @@
-web: gunicorn run_keras_server.wsgi --log-file -
+web gunicorn -b 0.0.0.0:5000 wsgi run_keras_server:app
