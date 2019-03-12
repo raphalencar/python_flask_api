@@ -131,4 +131,4 @@ if __name__ == "__main__":
 	input_shape = (155, 220, 3)
 	print(" Loading keras model and Flask starting server... ")
 	load_model(input_shape)
-	app.run()
+	app.run(host='0.0.0.0')
