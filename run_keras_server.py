@@ -131,4 +131,5 @@ if __name__ == "__main__":
 	input_shape = (155, 220, 3)
 	print(" Loading keras model and Flask starting server... ")
 	load_model(input_shape)
+	port = int(os.environ.get('PORT', 5000))
 	app.run(host='0.0.0.0')
