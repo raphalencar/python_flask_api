@@ -1,1 +1,1 @@
-web: python run_keras_server.py runserver 0.0.0.0:5000
+web gunicorn run_keras_server:app
