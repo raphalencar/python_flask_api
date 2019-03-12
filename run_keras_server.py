@@ -15,6 +15,7 @@ import os
 
 # initialize our Flask application and the Keras model
 app = flask.Flask(__name__)
+
 model = None
 img_height = 155
 img_width = 220
@@ -127,12 +128,9 @@ def predict():
 
 	return flask.jsonify(data)
 
-if __name__ == "__main__":
+if __name__ == "run_keras_server":
 	input_shape = (155, 220, 3)
-
-	port = int(os.environ.get('PORT', 5000))
-	app.run(host='0.0.0.0', port=port)
-	
 	print(" Loading keras model and Flask starting server... ")
 	load_model(input_shape)
+	app.run()
 	
