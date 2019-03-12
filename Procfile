@@ -1,1 +1,1 @@
-web gunicorn -b 0.0.0.0:5000 wsgi run_keras_server:app
+web: python run_keras_server.py runserver 0.0.0.0:5000
