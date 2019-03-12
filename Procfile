@@ -1,1 +1,1 @@
-web gunicorn run_keras_server:app
+web gunicorn -b 0.0.0.0:5000 wsi:app
