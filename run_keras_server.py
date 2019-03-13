@@ -19,8 +19,6 @@ model = None
 img_height = 155
 img_width = 220
 
-input_shape = (155, 220, 3)
-
 def euclidean_distance(vects):
     x, y = vects
     sum_square = K.sum(K.square(x - y), axis=1, keepdims=True)
@@ -128,6 +126,3 @@ def predict():
 			data["score"] = str(pred[0])
 
 	return flask.jsonify(data)
-
-print(" Loading keras model and Flask starting server... ")
-load_model(input_shape)
