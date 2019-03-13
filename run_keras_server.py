@@ -4,7 +4,7 @@ from keras.preprocessing.image import load_img, img_to_array
 from keras.models import Model
 from keras.layers import Dense, Dropout, Input, Lambda, Flatten, Conv2D, MaxPooling2D, ZeroPadding2D
 from keras.regularizers import l2 
-from PIL import Image
+from PIL import Image, ImageFile
 import base64
 from skimage import transform
 import numpy as np
@@ -12,6 +12,7 @@ import flask
 import io 
 import wget
 import os
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 # initialize our Flask application and the Keras model
 app = flask.Flask(__name__)
@@ -106,7 +107,7 @@ def predict():
 
 			img1_data = base64.b64decode(str(body['image1']))
 			image1 = Image.open(io.BytesIO(img1_data))
-
+			
 			# preprocess the image and prepare it
 			image1 = prepare_image(image1)
 
