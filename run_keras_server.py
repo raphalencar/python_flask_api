@@ -131,7 +131,3 @@ def predict():
 
 print(" Loading keras model and Flask starting server... ")
 load_model(input_shape)
-
-host = '0.0.0.0'
-port = int(os.environ.get('PORT', 5000))
-app.run(host=host, port=port)	
