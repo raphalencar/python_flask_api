@@ -7,5 +7,6 @@ print(" Loading keras model and Flask starting server... ")
 input_shape = (155, 220, 3)
 load_model(input_shape)
 
-host='0.0.0.0'
-application.run(host=host)
+host = '0.0.0.0'
+port = int(os.environ.get('PORT', 8000))
+application.run(host=host, port=port)
