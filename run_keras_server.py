@@ -126,3 +126,8 @@ def predict():
 			data["score"] = str(pred[0])
 
 	return flask.jsonify(data)
+
+print(" Loading keras model and Flask starting server... ")
+
+input_shape = (155, 220, 3)
+load_model(input_shape)
