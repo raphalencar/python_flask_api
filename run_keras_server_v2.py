@@ -3,6 +3,7 @@ from keras import backend as K
 from keras.preprocessing.image import load_img, img_to_array
 from keras.models import Model
 from keras.layers import Dense, Dropout, Input, Lambda, Flatten, Conv2D, MaxPooling2D, ZeroPadding2D
+from keras.applications import vgg16
 from keras.regularizers import l2 
 from PIL import Image, ImageFile
 import base64
@@ -68,7 +69,7 @@ def load_model(input_shape):
 
 	distance = Lambda(euclidean_distance, output_shape=eucl_dist_output_shape)([processed_a, processed_b])
 
-	model_path = 'model.hdf5'
+	model_path = 'model_v2.hdf5'
 	exists = os.path.isfile(model_path)
 
 	if not exists:
