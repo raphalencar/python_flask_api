@@ -73,7 +73,7 @@ def load_model(input_shape):
 
 	if not exists:
 		print('Beginning file download with wget module...')
-		url = "https://docs.google.com/uc?export=download&id=1rWeDw9v3qcN6-GCpdEWNu0762vIyuTDm"
+		url = "https://docs.google.com/uc?export=download&id=1ibWknuMFY_88xQUcw0PPC8uLykEW7RTz"
 		wget.download(url)
 
 	model = Model(inputs=[input_a, input_b], outputs=distance)
