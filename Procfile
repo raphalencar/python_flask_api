@@ -1,1 +1,1 @@
-web gunicorn run_keras_server:app
+web gunicorn run_keras_server_v2:app
