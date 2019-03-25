@@ -69,12 +69,12 @@ def load_model(input_shape):
 
 	distance = Lambda(euclidean_distance, output_shape=eucl_dist_output_shape)([processed_a, processed_b])
 
-	model_path = 'model_v2.hdf5'
+	model_path = 'model_v4.hdf5'
 	exists = os.path.isfile(model_path)
 
 	if not exists:
 		print('Beginning file download with wget module...')
-		url = "https://docs.google.com/uc?export=download&id=1ibWknuMFY_88xQUcw0PPC8uLykEW7RTz"
+		url = "https://docs.google.com/uc?export=download&id=1Z_dmvFepAjJvlJ-ut0OywnOsFw4n4Onh"
 		wget.download(url)
 
 	model = Model(inputs=[input_a, input_b], outputs=distance)
